@@ -79,12 +79,9 @@
               <li><a href="#">Maladies du foie</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
 
     </div>
   </header><!-- End Header -->
@@ -112,10 +109,18 @@
                 </p>
           </div>
   
-
           <div class="section-title">
-            <h2>Variables du modèle</h2>
-            <table>
+            <h2>Variables</h2>
+
+            <!-- Add the dropdown menu -->
+            <label for="feature-select">Sélectionnez une variable:</label>
+            <select id="feature-select" onchange="filterTable()">
+              <option value="all">Toutes les variables</option>
+              <!-- The options will be dynamically populated by JavaScript -->
+            </select>
+            <br><br>
+
+            <table id="variables-table">
                 <thead>
                     <tr>
                         <th>Feature</th>
@@ -194,182 +199,123 @@
                         <td>Indique une infection des voies urinaires qui peut affecter la fonction rénale si elle est sévère ou non traitée.</td>
                     </tr>
                     <tr>
-                        <td>blood glucose random</td>
-                        <td>tx de sucre sanguin aléatoire</td>
+                        <td>Blood glucose random</td>
+                        <td>Taux de sucre sanguin aléatoire</td>
                         <td>Niveau de sucre dans le sang mesuré à tout moment de la journée.</td>
-                        <td>> 200 mg/dL</td>
-                        <td>Des niveaux élevés de sucre dans le sang peuvent indiquer un diabète, qui est un facteur de risque majeur pour la MRC.</td>
+                        <td>Taux > 200 mg/dL</td>
+                        <td>Des niveaux élevés de sucre dans le sang peuvent indiquer un diabète qui est un facteur de risque majeur pour la MRC.</td>
                     </tr>
                     <tr>
-                        <td>blood urea</td>
-                        <td>tx urée sanguine</td>
+                        <td>Blood urea</td>
+                        <td>Taux d'urée sanguine</td>
                         <td>Un déchet formé dans le foie et excrété par les reins.</td>
-                        <td>> 20 mg/dL</td>
+                        <td>Taux > 20 mg/dL</td>
                         <td>Des niveaux élevés d'urée dans le sang indiquent une réduction de la fonction rénale.</td>
                     </tr>
                     <tr>
-                        <td>serum creatinine</td>
-                        <td>tx créatinine sérique</td>
-                        <td>Un déchet du métabolisme musculaire, mesuré dans le sang.</td>
-                        <td>F > 1,2 md/dL H > 1,4 md/dL</td>
+                        <td>Serum creatinine</td>
+                        <td>Taux de créatinine sérique</td>
+                        <td>Un déchet du métabolisme musculaire mesuré dans le sang.</td>
+                        <td><B>Femme</B> : taux > 1,2 md/dL <br><br>
+                            <B>Homme</B> : taux > 1,4 md/dL</td>
                         <td>Des niveaux élevés de créatinine suggèrent une fonction rénale altérée.</td>
                     </tr>
                     <tr>
-                        <td>sodium</td>
-                        <td>tx de sodium</td>
+                        <td>Sodium</td>
+                        <td>Taux de sodium</td>
                         <td>Un électrolyte essentiel dans le sang.</td>
-                        <td>< 135 mEq/L ou > 145 mEq/L</td>
+                        <td>Taux < 135 mEq/L ou taux > 145 mEq/L</td>
                         <td>Un déséquilibre des niveaux de sodium peut indiquer des problèmes de fonction rénale et de l'équilibre des fluides.</td>
                     </tr>
                     <tr>
-                        <td>potassium</td>
-                        <td>tx de potassium</td>
+                        <td>Potassium</td>
+                        <td>Taux de potassium</td>
                         <td>Un électrolyte essentiel dans le sang.</td>
-                        <td>> 5,0 mEq/L</td>
+                        <td>Taux > 5,0 mEq/L</td>
                         <td>Des niveaux élevés de potassium (hyperkaliémie) peuvent être dangereux et indiquer une fonction rénale réduite.</td>
                     </tr>
                     <tr>
-                        <td>haemoglobin</td>
-                        <td>tx hémoglobine</td>
+                        <td>Haemoglobin</td>
+                        <td>Taux d'hémoglobine</td>
                         <td>Une protéine dans les globules rouges qui transporte l'oxygène.</td>
-                        <td>F < 12g/dL H < 13,5 g/dL</td>
+                        <td><B>Femme</B> : taux < 12g/dL <br><br>
+                            <B>Homme </B> : taux < 13,5 g/dL</td>
                         <td>Des niveaux bas d'hémoglobine (anémie) sont fréquents chez les patients atteints de MRC en raison de la réduction de la production d'érythropoïétine par les reins.</td>
                     </tr>
                     <tr>
-                        <td>packed cell volume</td>
-                        <td>volume globules rouges tassés (hématocrite)</td>
+                        <td>Packed cell volume</td>
+                        <td>Volume de globules rouges tassés (hématocrite)</td>
                         <td>La proportion du volume sanguin occupée par les globules rouges.</td>
-                        <td>F < 36% H < 41%</td>
-                        <td>Des niveaux bas peuvent indiquer une anémie, souvent observée chez les patients atteints de MRC.</td>
+                        <td><B>Femme</B> : volume < 36% <br><br>
+                            <B>Homme</B> : volume < 41%</td>
+                        <td>Des niveaux bas peuvent indiquer une anémie souvent observée chez les patients atteints de MRC.</td>
                     </tr>
                     <tr>
-                        <td>white blood cell count</td>
-                        <td>nb globules blancs</td>
+                        <td>White blood cell count</td>
+                        <td>Nombre de globules blancs</td>
                         <td>Le nombre de globules blancs dans le sang.</td>
-                        <td>> 11 000 cellules/μL</td>
-                        <td>Des niveaux élevés peuvent indiquer une infection ou une inflammation, ce qui peut affecter la fonction rénale.</td>
+                        <td>Nombre > 11 000 cellules/μL</td>
+                        <td>Des niveaux élevés peuvent indiquer une infection ou une inflammation ce qui peut affecter la fonction rénale.</td>
                     </tr>
                     <tr>
-                        <td>red blood cell count</td>
-                        <td>nb globules rouges</td>
+                        <td>Red blood cell count</td>
+                        <td>Nombre de globules rouges</td>
                         <td>Le nombre de globules rouges dans le sang.</td>
-                        <td>F < 4,2 millions de cellules/μL H < 4,7 millions de cellules/μL</td>
-                        <td>Des niveaux bas peuvent indiquer une anémie, souvent observée chez les patients atteints de MRC.</td>
+                        <td><B>Femme</B> : nombre < 4,2 millions de cellules/μL <br><br>
+                            <B>Homme</B> : nombre < 4,7 millions de cellules/μL</td>
+                        <td>Des niveaux bas peuvent indiquer une anémie souvent observée chez les patients atteints de MRC.</td>
                     </tr>
                     <tr>
-                        <td>hypertension</td>
-                        <td>présence d'hypertension</td>
+                        <td>Hypertension</td>
+                        <td>Présence d'hypertension</td>
                         <td>Pression artérielle élevée chronique.</td>
-                        <td>> 140/90 mmHg</td>
+                        <td>Pression > 140/90 mmHg</td>
                         <td>Une pression artérielle élevée peut endommager les vaisseaux sanguins des reins, conduisant à une MRC.</td>
                     </tr>
                     <tr>
-                        <td>diabete mellitus</td>
-                        <td>présence diabète sucré</td>
+                        <td>Diabete mellitus</td>
+                        <td>Présence d'un diabète sucré</td>
                         <td>Un trouble métabolique caractérisé par des niveaux élevés de sucre dans le sang.</td>
                         <td>HbA1c > 6,5%</td>
                         <td>Un diabète mal contrôlé peut endommager les reins au fil du temps.</td>
                     </tr>
                     <tr>
-                        <td>coronary artery disease</td>
-                        <td>présence de maladie coronarienne</td>
+                        <td>Coronary artery disease</td>
+                        <td>Présence d'une maladie coronarienne</td>
                         <td>Une condition caractérisée par le rétrécissement des artères qui alimentent le cœur.</td>
                         <td>Diagnostic de la maladie</td>
                         <td>Les maladies cardiovasculaires peuvent aggraver les problèmes rénaux.</td>
                     </tr>
                     <tr>
-                        <td>appetite</td>
-                        <td>niveaux d'appétit</td>
+                        <td>Appetite</td>
+                        <td>Niveaux d'appétit</td>
                         <td>Le désir de manger de la nourriture.</td>
                         <td>Mauvais appétit ou anorexie</td>
                         <td>La perte d'appétit peut être un symptôme de la MRC avancée.</td>
                     </tr>
                     <tr>
-                        <td>pedal edema</td>
-                        <td>présence œdème des pieds</td>
+                        <td>Pedal edema</td>
+                        <td>Présence d'œdèmes aux pieds</td>
                         <td>Gonflement des pieds et des chevilles.</td>
-                        <td>Présence d'œdème</td>
+                        <td>Présence d'œdèmes</td>
                         <td>Indique une rétention de liquide due à une mauvaise fonction rénale.</td>
                     </tr>
                     <tr>
-                        <td>anemia</td>
-                        <td>présence anémie</td>
+                        <td>Anemia</td>
+                        <td>Présence d'anémie</td>
                         <td>Une condition marquée par une déficience en globules rouges ou en hémoglobine.</td>
-                        <td>F < 12g/dL H < 13,5 g/dL</td>
+                        <td><B>Femme</B> : taux d'hémoglobine < 12g/dL <br><br>
+                            <B>Homme</B> : taux d'hémoglobine < 13,5 g/dL</td>
                         <td>Fréquent chez les patients atteints de MRC en raison de la réduction de la production d'érythropoïétine par les reins.</td>
                     </tr>
                     
                 </tbody>
             </table>
           </div>
-          <div class="row">
-            <div class="col-lg-6" data-aos="fade-right">
-              <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
-              </p>
-            </div>
-          </div>
   
         </div>
       </section>
 
-
-
-    <section class="inner-page">
-      <div class="container">
-        <p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Colonne 1</th>
-                        <th>Colonne 2</th>
-                        <th>Colonne 3</th>
-                        <th>Colonne 4</th>
-                        <th>Colonne 5</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 6</td>
-                        <td>Donnée 7</td>
-                        <td>Donnée 8</td>
-                        <td>Donnée 9</td>
-                        <td>Donnée 10</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 11</td>
-                        <td>Donnée 12</td>
-                        <td>Donnée 13</td>
-                        <td>Donnée 14</td>
-                        <td>Donnée 15</td>
-                    </tr>
-                </tbody>
-            </table>
-        </p>
-      </div>
-    </section>
 
   </main><!-- End #main -->
 
@@ -381,10 +327,8 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Medicio</h3>
+              <h3>Care of Duty</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
                 <strong>Phone:</strong> +1 5589 55488 55<br>
                 <strong>Email:</strong> info@example.com<br>
               </p>
@@ -399,34 +343,18 @@
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Navigation</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Équipe</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Nos services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
             </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
           </div>
 
         </div>
@@ -435,7 +363,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -460,6 +388,46 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+  <!-- Menu déroulant JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Populate the dropdown menu with unique features
+      const select = document.getElementById('feature-select');
+      const table = document.getElementById('variables-table');
+      const rows = table.querySelectorAll('tbody tr');
+      const features = new Set();
+
+      rows.forEach(row => {
+        const feature = row.cells[0].textContent.trim();
+        features.add(feature);
+      });
+
+      features.forEach(feature => {
+        const option = document.createElement('option');
+        option.value = feature;
+        option.textContent = feature;
+        select.appendChild(option);
+      });
+    });
+
+    function filterTable() {
+      const select = document.getElementById('feature-select');
+      const selectedFeature = select.value;
+      const table = document.getElementById('variables-table');
+      const rows = table.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+        const feature = row.cells[0].textContent.trim();
+        if (selectedFeature === 'all' || feature === selectedFeature) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 
