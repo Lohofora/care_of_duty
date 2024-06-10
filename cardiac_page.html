@@ -74,8 +74,8 @@
             <ul>
               <li><a href="#">Diabète</a></li>
               <li><a href="#">Cancer du sein</a></li>
-              <li><a href="#">Maladies cardiaques</a></li>
-              <li><a href="#">Maladies rénales</a></li>
+              <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
+              <li><a href="mrc.html">Maladies rénales</a></li>
               <li><a href="#">Maladies du foie</a></li>
             </ul>
           </li>
@@ -109,8 +109,17 @@
               </div>
               
               <div class="section-title">
-                <h2>Variables du modèle</h2>
-                <table>
+                <h2>Variables</h2>
+                
+                <!-- Add the dropdown menu -->
+                <!-- <label for="feature-select">Sélectionnez une variable:</label> -->
+                <select id="feature-select" onchange="filterTable()">
+                  <option value="all">Toutes les variables</option>
+                  <!-- The options will be dynamically populated by JavaScript -->
+              </select>
+              <br><br>
+  
+              <table id="variables-table">
                   <thead>
                     <tr>
                       <th>Features</th>
@@ -121,87 +130,144 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Cp (chest pain)</td>
-                      <td>Douleur thoracique</td>
-                      <td>Nature spécifique de la douleur dans la région de la poitrine</td>
-                      <td>1 à 4 (1: Angor typique, 2: Angor atypique, 3: Douleur non-angineuse, 4: Asymptomatique)</td>
-                      <td>Aide à évaluer les risques de maladies coronariennes</td>
-                    </tr>
-                    <tr>
-                      <td>Trestbps</td>
-                      <td>Tension artérielle au repos</td>
-                      <td>Force exercée par le sang sur les parois des artères au repos</td>
-                      <td><120/80 mm Hg, 120-129/80 mm Hg, 130-139/80-89 mm Hg, ≥140/90 mm Hg</td>
-                      <td>Indique les risques de maladies cardiovasculaires</td>
-                    </tr>
+                        <tr>
+                            <td>Cp (chest pain)</td>
+                            <td>Douleur thoracique</td>
+                            <td>Nature spécifique de la douleur dans la région de la poitrine</td>
+                            <td>1 à 4 (1: Angor typique, 2: Angor atypique, 3: Douleur non-angineuse, 4: Asymptomatique)</td>
+                            <td>Aide à évaluer les risques de maladies coronariennes</td>
+                        </tr>
+                      <tr>
+                            <td>Trestbps</td>
+                            <td>Tension artérielle au repos</td>
+                            <td>Force exercée par le sang sur les parois des artères au repos</td>
+                            <td><120/80 mm Hg, 120-129/80 mm Hg, 130-139/80-89 mm Hg, ≥140/90 mm Hg</td>
+                            <td>
+                                Normale : &lt;120/80 mm Hg<br>
+                                Les individus présentant une pression artérielle normale sont à un risque minimal de développer des maladies cardiovasculaires.<br>
+                                Élevée : 120-129/80 mm Hg<br>
+                                Les personnes ayant une pression artérielle élevée ont un risque accru de progression vers l'hypertension.<br>
+                                Hypertension Stade 1 : 130-139/80-89 mm Hg<br>
+                                Les individus dans cette catégorie ont un risque modéré de développer des maladies cardiovasculaires.<br>
+                                Hypertension Stade 2 : ≥140/90 mm Hg<br>
+                                Les personnes ayant une pression artérielle au stade 2 ont un risque significatif de complications cardiovasculaires graves.
+                            </td>
+                      </tr>
                     <tr>
                       <td>Chol</td>
                       <td>Cholestérol sérique</td>
                       <td>Quantité de cholestérol dans le sérum sanguin</td>
                       <td><200 mg/dL, 200-239 mg/dL, ≥240 mg/dL</td>
-                      <td>Indique les risques de maladies cardiovasculaires</td>
+                        <td>
+                            &lt;200 mg/dL (optimal)<br>
+                            Faible risque de maladies cardiovasculaires.<br>
+                            200-239 mg/dL (limite élevée)<br>
+                            Risque modéré, nécessite surveillance.<br>
+                            ≥240 mg/dL (élevé)<br>
+                            Haut risque, intervention médicale souvent nécessaire.
+                          </td>
                     </tr>
                     <tr>
                       <td>Fbs</td>
                       <td>Glycémie à jeun</td>
                       <td>Taux de sucre dans le sang à jeun</td>
                       <td><100 mg/dL, 100-125 mg/dL, ≥126 mg/dL</td>
-                      <td>Indicateur de diabète ou de pré-diabète</td>
+                        <td>
+                            Pré-diabète : 100-125 mg/dL<br>
+                            Risque accru de développer un diabète de type 2 et des maladies cardiovasculaires. Interventions précoces recommandées.<br>
+                            Diabète : ≥126 mg/dL<br>
+                            Diagnostic de diabète. Besoin de gestion médicale pour contrôler la glycémie et prévenir les complications.
+                          </td>
                     </tr>
                     <tr>
                       <td>Restecg</td>
                       <td>ECG au repos</td>
                       <td>Résultats électrocardiographiques au repos</td>
                       <td>PR : 120-200 ms, QRS : <120 ms, ST : élévation/dépression >1 mm, QT : <450 ms (H), <460 ms (F)</td>
-                      <td>Indique les risques de troubles du rythme cardiaque</td>
+                        <td>
+                            ST : élévation/dépression &gt;1 mm<br>
+                            Indique une possible ischémie ou infarctus.<br>
+                            QT : &lt;450 ms (H), &lt;460 ms (F)<br>
+                            Intervalle normal. Un prolongement peut signaler des risques de troubles du rythme cardiaque.
+                          </td>
                     </tr>
                     <tr>
                       <td>Thalach</td>
                       <td>Fréquence cardiaque maximale atteinte</td>
                       <td>Nombre maximal de battements par minute lors d'un effort physique intense</td>
                       <td>220 - âge</td>
-                      <td>Évalue la condition physique et la réponse du cœur à l'effort</td>
+                      <td>
+                        Surveillance de la santé cardiaque : Elle aide à évaluer la réponse du cœur à l'effort et à identifier des anomalies potentielles</td>
                     </tr>
                     <tr>
                       <td>Exang</td>
                       <td>Angine induite par l'exercice</td>
                       <td>Douleur ou inconfort dans la poitrine induite par l'exercice</td>
                       <td>Binary (0 ou 1)</td>
-                      <td>Indicateur de la présence d'angine</td>
+                      <td>0 : Absence d'angine induite par l'exercice.<br>
+                        1 : Présence d'angine induite par l'exercice.</td>
                     </tr>
                     <tr>
                       <td>Oldpeak</td>
                       <td>Dépression du segment ST</td>
                       <td>Dépression du segment ST induite par l'exercice</td>
                       <td>Dépression ST de 1 mm ou plus</td>
-                      <td>Indicateur d'ischémie myocardique</td>
+                      <td>
+                        Une dépression du segment ST de 1 mm ou plus pendant un test d'effort indique une ischémie myocardique.<br>
+                        Cela suggère un apport insuffisant de sang oxygéné au muscle cardiaque pendant l'effort, souvent dû à des artères coronaires rétrécies ou obstruées.<br>
+                        Utilisé pour diagnostiquer les maladies coronariennes et évaluer le risque de crises cardiaques.
+                      </td>
                     </tr>
                     <tr>
                       <td>Slope</td>
                       <td>Pente du segment ST</td>
                       <td>Pente du segment ST à l'effort maximal</td>
                       <td>1 (ascendante), 2 (plate), 3 (descendante)</td>
-                      <td>Indique les risques d'ischémie myocardique</td>
+                      <td>
+                        1 (Ascendante)<br>
+                        Normale, généralement bénigne, segment ST monte vers l'onde T.<br>
+                        2 (Plate)<br>
+                        Intermédiaire, potentiellement préoccupante, segment ST reste horizontal, possible ischémie myocardique modérée.<br>
+                        3 (Descendante)<br>
+                        Anormale, préoccupante, segment ST descend vers l'onde T, fortement associée à une ischémie myocardique et à un risque élevé de maladie coronarienne.
+                      </td>
                     </tr>
                     <tr>
                       <td>Ca</td>
                       <td>Nombre de vaisseaux majeurs colorés</td>
                       <td>Nombre de vaisseaux majeurs colorés par fluoroscopie</td>
                       <td>0 à 3</td>
-                      <td>Indique la présence de maladie coronarienne</td>
+                      <td>
+                        0 : Aucun vaisseau majeur obstrué ou rétréci. Absence ou faible présence de maladie coronarienne.<br>
+                        1 : Un vaisseau majeur obstrué ou rétréci. Maladie coronarienne légère à modérée.<br>
+                        2 : Deux vaisseaux majeurs obstrués ou rétrécis. Maladie coronarienne modérée à sévère.<br>
+                        3 : Trois vaisseaux majeurs obstrués ou rétrécis. Maladie coronarienne sévère avec risque élevé de complications cardiovasculaires.
+                      </td>
                     </tr>
                     <tr>
                       <td>Thal</td>
                       <td>Type de thalassémie</td>
                       <td>Types de thalassémie</td>
                       <td>Alpha-thalassémie (1-4 gènes), Bêta-thalassémie (mutations HBB)</td>
-                      <td>Indique les risques de complications cardiaques</td>
+                      <td>Les personnes atteintes de thalassémie, en particulier les formes intermédiaires et majeures, sont à risque accru de développer des complications cardiaques chroniques en raison des transfusions fréquentes et de l'anémie persistante</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              
+
+              <div class="section-title">
+                <h2>Bibliographie</h2>
+                <p style = "text-align: left">
+                    The American Heart Association, 2024, « La maladie rénale, qu’est-ce que c’est ? », <a href="https://www.heart.org/en/health-topics/high-blood-pressure/understanding-bloodpressure-readings
+">lien.</a><br>
+                  BIRON, 2024, « Densité (analyse d’urine de routine) », <a href="https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-016-0196-4">lien.</a><br>
+                  National Institute of Health and Care, 2016, « Clinical assessment of patients with chest pain », <a href="https://fondation-du-rein.org/la-maladie-renale-chronique/">lien.</a><br>
+                  NATIONAL HEART LUNG AND BLOOD INSTITUTE, 2024, « What Is High Blood Pressure? », <a href="https://www.nhlbi.nih.gov/health/high-blood-pressure">lien.</a><br>
+                  Mayo Clinic Staff., 2024, « Blood pressure chart: What your reading means ? » <a href="https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/in-depth/blood-pressure/art-20050982">lien.</a><br>
+                  COLLEGE OF HEALTH SCIENCES, QATAR UNIVERSITY, DOHA P.O, 2024, « Correlations between Resting Electrocardiogram Findings and Disease Profiles »<a href="https://www.mdpi.com/2077-0383/13/1/276">lien.</a>.<br>
+                  European Heart Journal, 2019, « ECG interpretation », <a href="https://academic.oup.com/eurheartj/article/40/32/2663/5552595">lien.</a><br>
+                    </p>
+              </div>
           <div class="row">
             <div class="col-lg-6" data-aos="fade-right">
               <img src="assets/img/about.jpg" class="img-fluid" alt="">
