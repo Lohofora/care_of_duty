@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Inner Page - Medicio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <title>Tableau à 5 colonnes</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #655b5b;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Accueil</a></li>
+          <li><a class="nav-link scrollto" href="#about">Équipe</a></li>
+          <li><a class="nav-link scrollto" href="#services">Moteur de prévision</a></li>
+          <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Diabète</a></li>
+              <li><a href="#">Cancer du sein</a></li>
+              <li><a href="#">Maladies cardiaques</a></li>
+              <li><a href="#">Maladies rénales</a></li>
+              <li><a href="#">Maladies du foie</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><B>Maladies chroniques du foie</B></h2>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Description</h2>
+          <p>Les maladies chroniques du foie, telles que l'hépatite virale, la stéatose hépatique non alcoolique, la
+            cirrhose et les maladies auto-immunes, persistent en raison de l'exposition continue à des facteurs nocifs
+            (virus, alcool, graisses, réponses immunitaires anormales). L'inflammation prolongée endommage le foie,
+            causant fatigue, jaunisse et œdème, et peut mener à des complications graves comme la cirrhose ou le cancer.
+          </p>
+        </div>
+
+        <div class="section-title">
+          <h2>Variables</h2>
+
+          <!-- Add the dropdown menu -->
+          <!-- <label for="feature-select">Sélectionnez une variable:</label> -->
+          <select id="feature-select" onchange="filterTable()">
+            <option value="all">Toutes les variables</option>
+            <!-- The options will be dynamically populated by JavaScript -->
+          </select>
+          <br><br>
+
+          <table id="variables-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Variable (Fr)</th>
+                <th>Définition</th>
+                <th>Seuil</th>
+                <th>Explication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Age</td>
+                <td>Age</td>
+                <td>Age du patient.</td>
+                <td>Augmentation avec l'âge. Principalement, plus de 50 ans</td>
+                <td>40 % des cirrhoses sont diagnostiquées après 60 ans.<br>
+                  Incidence de la NAFLD augmente avec l'âge, pic à 50-60 ans.<br><br>
+                  Facteurs de risque NAFLD : <br>
+                  <b>
+                    < 50 ans </b>: obésité, dyslipidémies <br>
+                      <b>50-60 ans </b>: hyperglycémie, hypertension <br>
+                      Surveiller les facteurs de risque spécifiques à l'âge pour prévenir la NAFLD.
+                </td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>Genre</td>
+                <td>Genre du patient</td>
+                <td><b>Hommes </b>: Consommation alcool plus importante, obésité plus importante, Hépatite B plus
+                  importante.<br><br>
+                  <b>Femmes </b>: Alcool, obésité (risques), d'avantage de causes auto-immunes.
+                </td>
+                <td>La NAFLD est plus présente chez les hommes que chez les femmes à toutes les tranches d'âges.<br><br>
+                  L'association entre la NAFLD et les facteurs de risque cardiométaboliques différait selon le sexe et
+                  les groupes d'âge, avec des associations plus fortes dans les groupes d'âge plus jeunes.</td>
+              </tr>
+              <tr>
+                <td>Total bilirubin</td>
+                <td>Bilirubine totale dans le sang.</td>
+                <td>Produit de degradation de l’hémoglobine qui se présente comme un pigment de couleur jaune.</td>
+                <td><b>Seuil normal chez l'adulte :</b> < 1,2 mg/dL<br>
+                    <b>Si supérieur à 2-3 mg/dL :</b> signe d'une atteinte hépatique. <br>
+                    <b>Si supérieur à 30 mg/dL :</b> ictère (jaunissement des muqueuses et de la peau)</td>
+                <td>Des niveaux plus élevés de bilirubine totale reflètent une dysfonction hépatique plus grave et un pronostic plus sombre dans la cirrhose.<br>
+                    Des taux très élevés de bilirubine totale (>3,45 mg/dL ou 60 μmol/L environ) peuvent signaler une cirrhose décompensée et un risque accru de mortalité à court terme.<br>
+                    Une hyperbilirubinémie sévère peut contribuer à l'encéphalopathie hépatique en permettant le passage de la bilirubine dans le cerveau, exacerbant les troubles neurologiques.<br>
+                </td>
+              </tr>
+              <tr>
+                <td>Phosphotase alkaline</td>
+                <td>Taux de Phosphotase alcaline dans le sang.</td>
+                <td>Un type de protéine trouvé dans le sang.</td>
+                <td><b>Seuil normal chez l'adulte :</b> 30-120 U/L</td>
+                <td>Un taux d'ALP nettement élevé(supérieur à 200-300 U/L chez l'adulte), peut indiquer une obstruction significative des voies biliaires ou une cholestase dans le contexte d'une maladie du foie.<br>
+                  Une ALP élevée combinée à une bilirubine et des transaminases élevées aide à évaluer la sévérité de l'atteinte hépatique et à différencier les profils cholestatiques des profils d'atteinte hépatocellulaire<br>
+                  Une élévation de la phosphatase alcaline sérique, combinée aux autres tests hépatiques, est un indicateur clé des maladies cholestatiques du foie et de l'ictère obstructif, aidant à caractériser le profil, la sévérité et l'évolution de l'atteinte hépatique.
+                </td>
+              </tr>
+              <tr>
+                <td>Alamine Aminotransferase</td>
+                <td>Taux d'alanine aminotransférase dans le sang.</td>
+                <td>Glucose présent dans le sang ou l'urine.</td>
+                <td><b>Hommes :</b> < 35 U/L<br>
+                  <b>Femmes :</b> < 25 U/L</td>
+                <td>Un taux d'ALAT nettement élevé (100-200 U/L chez l'adulte), peut indiquer une cytolyse hépatique active et une inflammation importante.</td>
+              </tr>
+              <tr>
+                <td>Albumin and globulin ratio</td>
+                <td>Rapport de l'albumine à la globuline dans le sang.</td>
+                <td>Il reflète l'équilibre entre ces deux principales protéines plasmatiques.</td>
+                <td><b>Seuil normal chez l'adulte :</b> Entre 1,0 et 2,2</td>
+                <td>En dessous de 1,0 : Un rapport A/G inversé est fréquemment retrouvé chez les patients atteints de maladies hépatiques sévères ou de cirrhose.<br>
+                    Au dessus de 2,2 : Un rapport A/G élevé est beaucoup moins fréquent et moins significatif qu'un rapport A/G bas. Un rapport A/G haut devrait soulever la possibilité d'une condition sous-jacente non liée au foie<br></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-title">
+          <h2>Bibliographie</h2>
+          <p style="text-align: left">
+            American Liver Foundation, 2020, « Statistiques sur les maladies du foie », <a
+              href="https://liverfoundation.org/fr/centre-de-ressources/Articles/statistiques-sur-les-maladies-du-foie/">lien.</a><br>
+            Andrea Sanabria, Julio C. Soto, Réjean Dion, M.D., Enriqueta Lúcar, 2011, « Gare aux déterminant des maladies chroniques du foie », <a
+              href="https://www.inspq.qc.ca/jasp/gare-aux-determinant-des-maladies-chroniques-du-foie">lien.</a><br>
+            CHU de Liège, 2024, « Référentiel d’examen - Phosphatases alcalines (Sang) », <a
+              href="https://www.chu.ulg.ac.be/jcms/c_498233/fr/phosphatases-alcalines-sang">lien.</a><br>
+            Keith J Barrington MD, s.d, « Lignes directrices pour la détection, la prise en charge et la prévention de l’hyperbilirubinémie chez les nouveau-nés à terme et peu prématurés (35 semaines d’âge gestationnel ou plus) », <a
+              href="https://cps.ca/fr/documents/position/hyperbilirubinemie-nouveau-nes">lien.</a><br>
+            Kinue Ooi, Katsuya Shiraki, Yoshitaka Morishita, Tsutomu Nobori, 2017, « High-molecular intestinal alkaline phosphatase in chronic liver diseases », <a
+              href="https://onlinelibrary.wiley.com/doi/10.1002/jcla.20178">lien.</a><br>
+            CHU d'Angers, s.d, Les maladies du foie ont bien changé en 20 ans, « Les maladies du foie ont bien changé en 20 ans », <a
+              href="https://www.chu-angers.fr/offre-de-soins/prevention-et-sante-publique/bien-vivre-au-quotidien/promotion-et-education-a-la-sante/les-maladies-du-foie-ont-bien-change-depuis-20-ans--141718.kjsp">lien.</a><br>
+            Marcela Lemos, 2023, « Phosphatase alcaline : pourquoi elle est élevée ou basse », <a
+              href="https://www.tuasaude.com/fr/examen-phosphatase-alcaline/">lien.</a><br>
+            Pan Afr Med J, 2015, « Incidence of hepatocellular carcinoma in chronic infection with hepatitis B », <a
+              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469438/#:~:text=L'incidence%20cumul%C3%A9e%20de%20CHC,Fibrotest%20%3E0%2C73)">lien.</a><br>
+            S. PAUL STARR, MD, and DANIEL RAINES, MD, Louisiana State University Health Sciences et Center School of Medicine at New Orleans, 2011, « Cirrhosis: Diagnosis, Management, and Prevention », <a
+              href="https://www.aafp.org/pubs/afp/issues/2011/1215/p1353.pdf">lien.</a><br>
+            Sergio Fresneda, Manuela Abbate, Carla Busquets-Cortés, Arturo López-González, Pilar Fuster-Parra, Miquel Bennasar-Veny & Aina M. Yáñez, 2022, « Sex and age differences in the association of fatty liver index-defined non-alcoholic fatty liver disease with cardiometabolic risk factors: a cross-sectional study », <a
+              href="https://bsd.biomedcentral.com/articles/10.1186/s13293-022-00475-7">lien.</a><br>
+              « The Progression of Liver Disease to Liver Cancer »<a
+              href="https://liverfoundation.org/resource-center/videos/the-progression-of-liver-disease-to-liver-cancer/">lien.</a><br>
+              Viroj Wiwanitkit, 2001, « High serum alkaline phosphatase levels, a study in 181 Thai adult hospitalized patients », <a
+              href="https://bmcprimcare.biomedcentral.com/articles/10.1186/1471-2296-2-2">lien.</a><br>
+            </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Care of Duty</h3>
+              <p>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Navigation</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Équipe</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <!-- Menu déroulant JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Populate the dropdown menu with unique features
+      const select = document.getElementById('feature-select');
+      const table = document.getElementById('variables-table');
+      const rows = table.querySelectorAll('tbody tr');
+      const features = new Set();
+
+      rows.forEach(row => {
+        const feature = row.cells[0].textContent.trim();
+        features.add(feature);
+      });
+
+      features.forEach(feature => {
+        const option = document.createElement('option');
+        option.value = feature;
+        option.textContent = feature;
+        select.appendChild(option);
+      });
+    });
+
+    function filterTable() {
+      const select = document.getElementById('feature-select');
+      const selectedFeature = select.value;
+      const table = document.getElementById('variables-table');
+      const rows = table.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+        const feature = row.cells[0].textContent.trim();
+        if (selectedFeature === 'all' || feature === selectedFeature) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
