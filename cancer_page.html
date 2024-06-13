@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Inner Page - Medicio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <title>Tableau à 5 colonnes</title>
+  <style>
+      table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+      th, td {
+          border: 1px solid #655b5b;
+          padding: 8px;
+          text-align : left;
+      }
+      th {
+          background-color: #f2f2f2;
+          text-align: center;
+      }
+      tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+      tr:hover {
+          background-color: #f1f1f1;
+      }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Accueil</a></li>
+          <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="diabete_page.html">Diabète</a></li>
+              <li><a href="cancer_page">Cancer du sein</a></li>
+              <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
+              <li><a href="mrc.html">Maladies rénales</a></li>
+              <li><a href="mcf.html">Maladies du foie</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#services">Moteur de prévision</a></li>
+          <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2><B>Cancer du sein</B></h2>
+          </div>
+        </div>
+      </section><!-- End Breadcrumbs Section -->
+
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+  
+            <div class="section-title">
+                <h2>Description</h2>
+                <p>Le cancer du sein est une maladie où des cellules malignes (cancéreuses) se forment dans les tissus du sein, souvent dans les canaux (conduits qui transportent le lait) ou les lobules (glandes productrices de lait). Cette maladie peut se propager (métastases) aux tissus environnants ou à d'autres parties du corps.
+                  Les trois formes les plus fréquemment rencontrées sont : les carcinomes non infiltrant, les carcinomes infiltrants,  les carcinomes inflammatoires.Des avancées récentes en recherche permettent d'améliorer constamment les traitements disponibles. </p>
+                 
+              </div>
+              
+              <div class="section-title">
+                <h2>Variables</h2>
+                
+                <!-- Add the dropdown menu -->
+                <!-- <label for="feature-select">Sélectionnez une variable:</label> -->
+                <select id="feature-select" onchange="filterTable()">
+                  <option value="all">Toutes les variables</option>
+                  <!-- The options will be dynamically populated by JavaScript -->
+              </select>
+              <br><br>
+  
+              <table id="variables-table">
+                  <thead>
+                    <tr>
+                      <th>Features</th>
+                      <th>Variable (Fr)</th>
+                      <th>Définition</th>
+                      <th>Seuils</th>
+                      <th>Explication</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                            <td>Radius Mean</td>
+                            <td>Rayon moyen</td>
+                            <td>Moyenne des distances du centre de la masse tumorale aux points sur le périmètre</td>
+                            <td>Bénin < 12 mm<br>
+                              Malin > 17 mm </td>
+                            <td>Aide à évaluer la taille moyenne de la tumeur.<br>
+                               Plus le rayon est grand, plus la tumeur est grosse. Des valeurs élevées suggèrent une tumeur potentiellement maligne, justifiant une investigation et un traitement plus poussés.</td>
+                        </tr>
+                      <tr>
+                            <td>Area Mean</td>
+                            <td>Surface moyenne</td>
+                            <td>Valeur Moyenne de la surface de la tumeur dans le tissu mammaire</td>
+                            <td>Bénin < 463 mm2<br>
+                              Malin > 978 mm2</td>
+                            <td>
+                              Aide à définir le stade du cancer du sein en évaluant la taille et l’étendue des anomalies mammaires, essentielles pour déterminer le potentiel de malignité.<br>
+                              Les cellules malignes ont souvent une surface plus grande que les cellules bénignes en raison de leur croissance rapide et désordonnée.
+                            </td>
+                      </tr>
+                    <tr>
+                      <td>Compactness Mean</td>
+                      <td>Compacité Moyenne</td>
+                      <td>Moyenne de (périmètre² / surface - 1)<br>
+                        On compare la circonférence de la tumeur à sa surface. </td>
+                      <td>Bénin < 0.08 <br>
+                        Malin > 0.15 </td>
+                        <td>
+                          Mesure à quel point les contours de la tumeur sont compacts et réguliers.<br> 
+                          Tumeurs bénignes : Souvent plus compactes et régulières, donnant des valeurs de compacité plus faibles.<br>
+                          Tumeurs malignes : Souvent moins compactes et irrégulières, donnant des valeurs de compacité plus élevées.
+                          </td>
+                    </tr>
+                    <tr>
+                      <td>Concavity Mean</td>
+                      <td>Concavité moyenne</td>
+                      <td>Moyenne de la gravité des parties concaves du contour, indiquant combien les bords de la tumeur s'enfoncent vers l'intérieur</td>
+                      <td>Bénin < 0.05 <br>
+                        Malin > 0.2 </td>
+                        <td>
+                         Mesure la sévérité ou la profondeur moyenne des parties concaves du contour de la tumeur.<br>
+                         Les bords irréguliers et dentelés de la tumeur sont un signe de malignité.<br>
+                         Cette caractéristique est importante car les tumeurs malignes ont souvent une forme plus irrégulière et concave que les tumeurs bénignes.</td>
+                    </tr>
+                    <tr>
+                      <td>Concave Points Mean</td>
+                      <td>Moyenne des points concaves</td>
+                      <td>Moyenne du nombre de parties concaves du contour d'une masse mammaire, comptant le nombre de points où les bords de la tumeur s'enfoncent</td>
+                      <td>Bénin < 0.03 <br>
+                        Malin > 0.09 </td>
+                        <td>
+                          Des valeurs plus élevées indiquent généralement une malignité en raison des motifs de croissance irréguliers des cellules cancéreuses. 
+                          Les tumeurs peuvent présenter une hétérogénéité intrinsèque, ce qui rend difficile la définition d'une valeur seuil unique applicable à tous les cas.<br>
+                          L'interprétation de l'indicateur doit se faire dans le contexte d'une évaluation complète.
+                          </td>
+                    </tr>
+                    <tr>
+                      <td>Area Worst</td>
+                      <td>Surface maximale</td>
+                      <td>Surface (aire) maximale de la tumeur  (moyenne des trois plus grandes valeurs) </td>
+                      <td>Malin > 1500 mm2 </td>
+                      <td>Représente la valeur maximale de la surface parmi les surfaces calculées pour les contours de la masse tumorale.<br>
+                        Une grande surface maximale est souvent un signe de malignité, car les cellules cancéreuses peuvent devenir très grandes.<br>
+                        L'interprétation de l'indicateur doit se faire dans le contexte d'une évaluation complète.</td>
+                    </tr>
+                    <tr>
+                      <td>Compactness Worst</td>
+                      <td>Compacité maximale</td>
+                      <td>Compacité maximale de la tumeur (moyenne des trois plus grandes valeurs)</td>
+                      <td>Malin > 0,45 </td>
+                      <td>C'est une mesure du degré de compacité (entassement de la masse tumorale), calculée comme le rapport du périmètre au carré à la surface.<br> 
+                        Une valeur élevée indique une forme tumorale moins compacte et plus irrégulière, ce qui est généralement associé à une plus grande probabilité de malignité.<br>
+                         Les études montrent que cet indicateur a une corrélation positive avec des caractéristiques telles que «Concavity Mean» et «Radius Worst».</td>
+                    </tr>
+                    <tr>
+                      <td>Concavity Worst</td>
+                      <td>Concavité maximale</td>
+                      <td>Concavité maximale de la tumeur (moyenne des trois plus grandes valeurs) .</td>
+                      <td>Malin > 0,45 mm </td>
+                      <td>Représente la valeur maximale de la sévérité des portions concaves du contour de la tumeur.<br>
+                        Les tumeurs malignes ont des concavités plus profondes.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Area SE</td>
+                      <td>Erreur standard de la surface</td>
+                      <td>Erreur standard de la surface de la tumeur</td>
+                      <td>Malin > 100 mm2 </td>
+                      <td>Mesure la variabilité de la taille de la tumeur.<br>
+                        Une grande variabilité de la taille des cellules est souvent associée à des tumeurs malignes car les cellules cancéreuses ont des tailles irrégulières.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Fractal Dimension SE</td>
+                      <td>Erreur Standard de la Dimension Fractale</td>
+                      <td>Erreur standard de "l'approximation du littoral" - 1<br>
+                        Mesure la variation de la dimension fractale des contours de la tumeur, décrivant la complexité des bords.</td>
+                      <td>Malin > 0.01 </td>
+                      <td>
+                        Indique à quel point les bords de la tumeur sont complexes. Les tumeurs malignes ont des contours plus complexes.<br>
+                        Une grande variabilité est souvent un signe de malignité, car les cellules cancéreuses montrent une hétérogénéité plus élevée.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Symmetry Worst</td>
+                      <td>Symétrie maximale</td>
+                      <td>Symétrie maximale de la tumeur (moyenne des trois plus grandes valeurs)</td>
+                      <td>Bénin proche de "0"<br>
+                        Malin > 0,3 </td>
+                      <td>C'est une mesure qui évalue la symétrie des contours de la tumeur, en se concentrant sur la valeur la plus élevée observée.<br>
+                        Cet indicateur compare la forme d'un côté de la tumeur à l'autre côté pour voir à quel point ils se ressemblent.<br>
+                        Une tumeur symétrique a des deux côtés similaires, tandis qu'une tumeur asymétrique a des côtés qui diffèrent significativement.</td>
+                    </tr>
+                    <tr>
+                      <td>Fractal Dimension Worst</td>
+                      <td>Dimension fractale maximale</td>
+                      <td>Dimension fractale maximale de la tumeur  (moyenne des trois plus grandes valeurs)</td>
+                      <td>Malin > 0,07 </td>
+                      <td>Mesure la complexité maximale des bords de la tumeur. Les tumeurs malignes ont des contours plus complexes et irréguliers.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="section-title">
+                <h2>Bibliographie</h2>
+                <p style = "text-align: left">
+                  Ameli. ‘Comprendre Le Cancer Du Sein’, 2024. <a href="https://www.ameli.fr/assure/sante/themes/cancer-sein/comprendre-cancer-sein">lien.</a><br>
+                  Aminul Islam, Md. Alif Sheakh, Mst. Sazia Tahosin, Most. Hasna Hena, Shopnil Akash, Yousef A. Bin Jardan, Gezahign FentahunWondmie, Hiba-Allah Nafidi & Mohammed Bourhia. ‘Predictive Modeling for Breast Cancer Classification in the Context of Bangladeshi Patients by Use of Machine Learning Approach with Explainable AI’. Nature Portfolio, 2024. <a href="https://www.nature.com/articles/s41598-024-57740-5#Sec21">lien.</a><br>
+                  Clément G. Yedjou , Solange S. Tchounwou , Richard A. Aló , Rashid Elhag , BereKet Mochona , Lekan Latinwo. ‘Application Des Algorithmes d’apprentissage Automatique Au Diagnostic et à La Classification Du Cancer Du Sein’. NCBI, 2021. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8612371/#:~:text=The%20higher%20value%20of%20the,one%20diagnosis%20over%20the%20other">lien.</a><br>
+                  FRM_Fondation Recherche Medicale. ‘Explications Sur Le Cancer Du Sein’, 2023. <a href="https://www.frm.org/fr/maladies/recherches-cancers/cancer-du-sein/focus-cancer-sein">lien.</a><br>
+                  G. Mohan, Muhammadu Sathik Raja, S. Swathi , E.N. Ganesh. ‘A Novel Breast Cancer Diagnostic Using Convolutional Squared Deviation Neural Network Classifier with Al-Biruni Earth Radius Optimization in Medical IoT System’. Sciencedirect, 2024. <a href="https://www.sciencedirect.com/science/article/pii/S2772671124000226">lien.</a><br>
+                  INSTITUT DE RADIOTHÉRAPIE ET DE RADIOCHIRURGIE. ‘La Classification et Les Différents Stades Du Cancer Du Sein’, 2023. https://radiotherapie-hartmann.fr/actualites/cancer-sein/les-differents-stades-du-cancer-du-sein/">lien.</a><br>
+                  Institut National du Cancer. ‘Diagnostic d’un Cancer Du Sein’, 2023. <a href="https://www.e-cancer.fr/Patients-et-proches/Les-cancers/Cancer-du-sein/Diagnostic">lien.</a><br>
+                  LA FHP MCO. ‘CANCER DU SEIN : QUELLE EST LA VALEUR AJOUTÉE DE LA TECHNOLOGIE DANS LE CADRE DES DÉPISTAGES ?’, 2023. <a href="https://www.fhpmco.fr/2023/08/31/cancer-du-sein-quelle-est-la-valeur-ajoutee-de-la-technologie-dans-le-cadre-des-depistages/">lien.</a><br>
+                  Mona Mahmoud Abo El Nasr ,Alaa A. Abdelmegaly &Doaa A.Abdo. ‘Performance Evaluation of Diferent Models: Application a Breast Cancer Patient Data’, 2024. <a href="https://www.nature.com/articles/s41598-024-62627-6">lien.</a><br>
+                  Muhammet Fatih Ak. ‘A Comparative Analysis of Breast Cancer Detection and Diagnosis Using Data Visualization and Machine Learning Applications’. NCBI, 2020. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7349542/">lien.</a><br>
+                  Rangaraj M. Rangayyan,Thanh M. Nguyen. ‘Analyse Fractale Des Contours Des Masses Mammaires Dans Les Mammographies’. La FHP MCO, 2006. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3043900/">lien.</a><br>
+                  Vidal. ‘Cancer Du Sein’, 2023. <a href="https://www.vidal.fr/maladies/cancers/cancer-sein.html">lien.</a><br>
+                </p>
+  
+        </div>
+      </section>
+
+
+
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Care of Duty</h3>
+              <p>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Navigation</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="equipe.html">Équipe</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <!-- Menu déroulant JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Populate the dropdown menu with unique features
+      const select = document.getElementById('feature-select');
+      const table = document.getElementById('variables-table');
+      const rows = table.querySelectorAll('tbody tr');
+      const features = new Set();
+
+      rows.forEach(row => {
+        const feature = row.cells[0].textContent.trim();
+        features.add(feature);
+      });
+
+      features.forEach(feature => {
+        const option = document.createElement('option');
+        option.value = feature;
+        option.textContent = feature;
+        select.appendChild(option);
+      });
+    });
+
+    function filterTable() {
+      const select = document.getElementById('feature-select');
+      const selectedFeature = select.value;
+      const table = document.getElementById('variables-table');
+      const rows = table.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+        const feature = row.cells[0].textContent.trim();
+        if (selectedFeature === 'all' || feature === selectedFeature) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
