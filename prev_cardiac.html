@@ -36,7 +36,7 @@
       border-radius: 10px;
       background: #f9f9f9;
     }
-    .form-container h1 {
+    .form-container h3 {
       text-align: center;
       margin-bottom: 20px;
     }
@@ -44,7 +44,7 @@
       margin-bottom: 15px;
     }
     .form-group label {
-      font-weight: bold;
+      /* font-weight: bold; */
     }
     .form-group input, .form-group select {
       width: 100%;
@@ -90,7 +90,7 @@
             <li><a href="mcf.html">Maladies du foie</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="index.html#services"><span>Moteur de prévision</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="index.html#services"><span>Moteur de prédiction</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="prev_diabete.html">Diabète</a></li>
             <li><a href="prev_cancer_sein.html">Cancer du sein</a></li>
@@ -113,7 +113,7 @@
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2><b>Moteur de prévision des maladies cardiaques</b></h2>
+          <h2><b>Moteur de prédiction des maladies cardiaques</b></h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
@@ -121,25 +121,27 @@
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
         <div class="form-container">
-          <h1>Formulaire de saisie</h1>
+          <h3>Vos informations :</h3><br>
           <form method="post">
             
             <div class="form-group">
-              <label for="age">Age:</label>
+              <label for="age">Age :</label>
               <input type="text" id="age" name="age" required>
             </div>
 
             <div class="form-group">
-              <label for="sex">Sex:</label>
+              <label for="sex">Sex :</label>
               <select id="sex" name="sex" required>
+                <option></option>
                 <option value="1">Male</option>
                 <option value="0">Female</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="cp">CP (Chest Pain Type):</label>
+              <label for="cp">CP (Chest Pain Type) :</label>
               <select id="cp" name="cp" required>
+                <option></option>
                 <option value="0">Typical angina</option>
                 <option value="1">Atypical angina</option>
                 <option value="2">Non-anginal pain</option>
@@ -148,26 +150,28 @@
             </div>
 
             <div class="form-group">
-              <label for="trestbps">Trestbps (Resting Blood Pressure):</label>
+              <label for="trestbps">Trestbps (Resting Blood Pressure) :</label>
               <input type="text" id="trestbps" name="trestbps" required>
             </div>
 
             <div class="form-group">
-              <label for="chol">Chol (Serum Cholestoral in mg/dl):</label>
+              <label for="chol">Chol (Serum Cholestoral in mg/dl) :</label>
               <input type="text" id="chol" name="chol" required>
             </div>
 
             <div class="form-group">
-              <label for="fbs">FBS (Fasting Blood Sugar > 120 mg/dl):</label>
+              <label for="fbs">FBS (Fasting Blood Sugar > 120 mg/dl) :</label>
               <select id="fbs" name="fbs" required>
+                <option></option>
                 <option value="1">True</option>
                 <option value="0">False</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="restecg">Restecg (Resting Electrocardiographic Results):</label>
+              <label for="restecg">Restecg (Resting Electrocardiographic Results) :</label>
               <select id="restecg" name="restecg" required>
+                <option></option>
                 <option value="0">Normal</option>
                 <option value="1">Having ST-T wave abnormality</option>
                 <option value="2">Showing probable or definite left ventricular hypertrophy</option>
@@ -175,26 +179,28 @@
             </div>
 
             <div class="form-group">
-              <label for="thalach">Thalach (Maximum Heart Rate Achieved):</label>
+              <label for="thalach">Thalach (Maximum Heart Rate Achieved) :</label>
               <input type="text" id="thalach" name="thalach" required>
             </div>
 
             <div class="form-group">
-              <label for="exang">Exang (Exercise Induced Angina):</label>
+              <label for="exang">Exang (Exercise Induced Angina) :</label>
               <select id="exang" name="exang" required>
+                <option></option>
                 <option value="1">Yes</option>
                 <option value="0">No</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="oldpeak">Oldpeak (ST Depression Induced by Exercise):</label>
+              <label for="oldpeak">Oldpeak (ST Depression Induced by Exercise) :</label>
               <input type="text" id="oldpeak" name="oldpeak" required>
             </div>
 
             <div class="form-group">
-              <label for="slope">Slope (Slope of the Peak Exercise ST Segment):</label>
+              <label for="slope">Slope (Slope of the Peak Exercise ST Segment) :</label>
               <select id="slope" name="slope" required>
+                <option></option>
                 <option value="0">Upsloping</option>
                 <option value="1">Flat</option>
                 <option value="2">Downsloping</option>
@@ -202,8 +208,9 @@
             </div>
 
             <div class="form-group">
-              <label for="ca">CA (Number of Major Vessels Colored by Fluoroscopy):</label>
+              <label for="ca">CA (Number of Major Vessels Colored by Fluoroscopy) :</label>
               <select id="ca" name="ca" required>
+                <option></option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -214,8 +221,9 @@
             </div>
 
             <div class="form-group">
-              <label for="thal">Thal:</label>
+              <label for="thal">Thal :</label>
               <select id="thal" name="thal" required>
+                <option></option>
                 <option value="1">Normal</option>
                 <option value="2">Fixed defect</option>
                 <option value="3">Reversible defect</option>
@@ -258,7 +266,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Nos services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Moteur de prévision</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Moteur de prédiction</a></li>
             </ul>
           </div>
 
