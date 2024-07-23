@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Care of Duty - Diabète</title>
+  <title>Care of Duty - Maladies Cardiaques</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -13,7 +13,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -27,31 +27,45 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
-  <title>Tableau à 5 colonnes</title>
   <style>
-      table {
-          width: 100%;
-          border-collapse: collapse;
-      }
-      th, td {
-          border: 1px solid #655b5b;
-          padding: 8px;
-          text-align : left;
-      }
-      th {
-          background-color: #f2f2f2;
-          text-align: center;
-      }
-      tr:nth-child(even) {
-          background-color: #f9f9f9;
-      }
-      tr:hover {
-          background-color: #f1f1f1;
-      }
+    .form-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background: #5cb85c;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+    }
+    .form-group button:hover {
+      background: #4cae4c;
+    }
   </style>
-
-
+  
 </head>
 
 <body>
@@ -98,119 +112,121 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
-        <div class="container">
-          <div class="d-flex justify-content-between align-items-center">
-            <h2><B>Moteur de prévision Maladies du foie</B></h2>
-          </div>
-        </div>
-      </section><!-- End Breadcrumbs Section -->
-
-      <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-          <div class="form-container">
-            <h1>Formulaire de saisie</h1>
-            <form method="post">
-
-              <div class="form-group">
-                <label for="Age">Age:</label>
-                <input type="text" id="Age" name="Age" required>
-              </div>
-              <div class="form-group">
-                <label for="Gender">Gender:</label>
-                <select id="Gender" name="Gender" required>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-              </div>
-              <div class="form-group">        
-                <label for="Total_Bilirubin">Total_Bilirubin:</label>
-                <input type="text" id="Total_Bilirubin" name="Total_Bilirubin" required>
-              </div>
-              <div class="form-group"></div>
-                <label for="Alkaline_Phosphotase">Alkaline_Phosphotase:</label>
-                <input type="text" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" required>
-              </div>
-              <div class="form-group"></div>
-                <label for="Alamine_Aminotransferase">Alamine_Aminotransferase:</label>
-                <input type="text" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" required>
-              </div>
-              <div class="form-group"></div>
-                <label for="Albumin_and_Globulin_Ratio">Albumin_and_Globulin_Ratio:</label>
-                <input type="text" id="Total_Bilirubin" name="Total_Bilirubin" required>
-              </div>
-              <div class="form-group"></div>
-                <input type="submit" value="Soumettre">
-            </form>
-          </div> 
-        </div>
-      </section>
-    </main><!-- End #main -->
-  
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-  
-            <div class="col-lg-3 col-md-6">
-              <div class="footer-info">
-                <h3>Care of Duty</h3>
-                <p>
-                  <strong>Phone:</strong> +1 5589 55488 55<br>
-                  <strong>Email:</strong> info@example.com<br>
-                </p>
-                <div class="social-links mt-3">
-                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                  <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                  <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-2 col-md-6 footer-links">
-              <h4>Navigation</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Équipe</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Nos services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
-              </ul>
-            </div>
-  
-          </div>
-        </div>
-      </div>
-  
       <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><b>Moteur de prévision des maladies du foie</b></h2>
         </div>
       </div>
-    </footer><!-- End Footer -->
-  
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-  
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-  
-  </body>
-  
-  </html>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="form-container">
+          <h1>Formulaire de saisie</h1>
+          <form method="post">
+            
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="text" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+              <label for="Gender">Gender:</label>
+              <select id="Gender" name="Gender" required>
+                <option value="1">Female</option>
+                <option value="0">Male</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Total_Bilirubin">Total Bilirubin :</label>
+              <select id="Total_Bilirubin" name="Total_Bilirubin" required>
+                <input type="text" id="Total_Bilirubin" name="Total_Bilirubin" required>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Alkaline_Phosphotase">Alkaline Phosphotase:</label>
+              <input type="text" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" required>
+            </div>
+            <div class="form-group">
+              <label for="Alamine_Aminotransferase">Alamine Aminotransferase :</label>
+              <input type="text" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" required>
+            </div>
+            <div class="form-group">
+              <label for="Albumin_and_Globulin_Ratio">Albumin and Globulin Ratio:</label>
+              <input type="text" id="Albumin_and_Globulin_Ratio" name="Albumin_and_Globulin_Ratio" required>
+            </div>
+          </form>
+        </div> 
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Care of Duty</h3>
+              <p>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Navigation</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Équipe</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
