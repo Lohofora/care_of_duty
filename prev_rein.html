@@ -70,42 +70,42 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+    <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
-          <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="diabete_page.html">Diabète</a></li>
-              <li><a href="cancer_page.html">Cancer du sein</a></li>
-              <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
-              <li><a href="mrc.html">Maladies rénales</a></li>
-              <li><a href="mcf.html">Maladies du foie</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="index.html"><span>Moteur de prévision</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="prev_diabete.html">Diabète</a></li>
-              <li><a href="prev_cancer_sein.html">Cancer du sein</a></li>
-              <li><a href="prev_cardiac.html">Maladies cardiaques</a></li>
-              <li><a href="prev_rein.html">Maladies rénales</a></li>
-              <li><a href="prev_foie.html">Maladies du foie</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
+        <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="diabete_page.html">Diabète</a></li>
+            <li><a href="cancer_page.html">Cancer du sein</a></li>
+            <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
+            <li><a href="mrc.html">Maladies rénales</a></li>
+            <li><a href="mcf.html">Maladies du foie</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="index.html"><span>Moteur de prévision</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="prev_diabete.html">Diabète</a></li>
+            <li><a href="prev_cancer_sein.html">Cancer du sein</a></li>
+            <li><a href="prev_cardiac.html">Maladies cardiaques</a></li>
+            <li><a href="prev_rein.html">Maladies rénales</a></li>
+            <li><a href="prev_foie.html">Maladies du foie</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
 
-    </div>
-  </header><!-- End Header -->
+  </div>
+</header><!-- End Header -->
 
   <main id="main">
 
@@ -125,175 +125,175 @@
           <form method="post">
             
             <div class="form-group">
-              <label for="age">Age :</label>
-              <input type="text" id="age" name="age"><br>
+              <label for="age">Age:</label>
+              <input type="text" id="age" name="age" required>
             </div>
 
             <div class="form-group">
-            <label for="bp">Pression artérielle (bp) :</label>
-            <input type="text" id="bp" name="bp"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="sg">Gravité spécific de l'urine (sg) :</label>
-            <input type="text" id="sg" name="sg"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="al">Taux d'albumine (al) :</label>
-            <input type="text" id="al" name="al"><br>
+              <label for="bp">Pression artérielle (bp) :</label>
+              <input type="text" id="bp" name="bp">
             </div>
 
             <div class="form-group">
-            <label for="su">Taux de surcre (su) :</label>
-            <input type="text" id="su" name="su"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="rbc">Globules rouges (rbc) :</label>
-            <select id="rbc" name="rbc">
-                <option value="neant"></option>
-                <option value="normal">Normal</option>
-                <option value="abnormal">Abnormal</option>
-                <option value="inconnu">Inconnu</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="pc">Cellules de pus (pc) :</label>
-            <select id="pc" name="pc">
-                <option value="neant"></option>
-                <option value="normal">Normal</option>
-                <option value="abnormal">Abnormal</option>
-                <option value="inconnu">Inconnu</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="pcc">Agrégats de cellules de pus (pcc) :</label>
-            <select id="pcc" name="pcc">
-                <option value="neant"></option>
-                <option value="present">Present</option>
-                <option value="notpresent">Not present</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="ba">Bactéries (ba) :</label>
-            <select id="ba" name="ba">
-                <option value="neant"></option>
-                <option value="present">Present</option>
-                <option value="notpresent">Not present</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="bgr">Taux de sucre sanguin (bgr) :</label>
-            <input type="text" id="bgr" name="bgr"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="bu">Taux d'urée sanguine (bu) :</label>
-            <input type="text" id="bu" name="bu"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="sc">Taux de créatinine sérique (sc) :</label>
-            <input type="text" id="sc" name="sc"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="sod">Taux de sodium (sod) :</label>
-            <input type="text" id="sod" name="sod"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="pot">Taux de potassium (pot) :</label>
-            <input type="text" id="pot" name="pot"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="hemo">Taux d'hémoglobine (hemo) :</label>
-            <input type="text" id="hemo" name="hemo"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="pcv">Globules rouges tassés (pcv) :</label>
-            <input type="text" id="pcv" name="pcv"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="wc">Nombre de globules blancs (wc) :</label>
-            <input type="text" id="wc" name="wc"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="rc">Nombre de globules rouges (rc) :</label>
-            <input type="text" id="rc" name="rc"><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="htn">Hypertension (htn) :</label>
-            <select id="htn" name="htn">
-                <option value="neant"></option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select><br>
+              <label for="sg">Gravité spécific de l'urine (sg) :</label>
+              <input type="text" id="sg" name="sg">
             </div>
 
             <div class="form-group">
-            <label for="dm">Diabète sucré (dm) :</label>
-            <select id="dm" name="dm">
-                <option value="neant"></option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select><br>
+              <label for="al">Taux d'albumine (al) :</label>
+              <input type="text" id="al" name="al">
             </div>
 
             <div class="form-group">
-            <label for="cad">Maladie coronarienne (cad) :</label>
-            <select id="cad" name="cad">
-                <option value="neant"></option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="appet">Appétit :</label>
-            <select id="appet" name="appet">
-                <option value="neant"></option>
-                <option value="good">Good</option>
-                <option value="poor">Poor</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="pe">Oedèmes aux pieds (pe) :</label>
-            <select id="pe" name="pe">
-                <option value="neant"></option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select><br>
-            </div>
-    
-            <div class="form-group">
-            <label for="ane">Anémie (ane) :</label>
-            <select id="ane" name="ane">
-                <option value="neant"></option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select><br>
+              <label for="su">Taux de sucre (su) :</label>
+              <input type="text" id="su" name="su">
             </div>
 
             <div class="form-group">
-            <input type="submit" value="Soumettre">
+              <label for="rbc">Globules rouges (rbc) :</label>
+              <select id="rbc" name="rbc">
+                  <option value="neant"></option>
+                  <option value="normal">Normal</option>
+                  <option value="abnormal">Abnormal</option>
+                  <option value="inconnu">Inconnu</option>
+              </select>
             </div>
-        </form>
-      </div> 
-    </div>
-  </section>
-</main><!-- End #main -->
+
+            <div class="form-group">
+              <label for="pc">Cellules de pus (pc) :</label>
+              <select id="pc" name="pc">
+                  <option value="neant"></option>
+                  <option value="normal">Normal</option>
+                  <option value="abnormal">Abnormal</option>
+                  <option value="inconnu">Inconnu</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pcc">Agrégats de cellules de pus (pcc) :</label>
+              <select id="pcc" name="pcc">
+                  <option value="neant"></option>
+                  <option value="present">Present</option>
+                  <option value="notpresent">Not present</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ba">Bactéries (ba) :</label>
+              <select id="ba" name="ba">
+                  <option value="neant"></option>
+                  <option value="present">Present</option>
+                  <option value="notpresent">Not present</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bgr">Taux de sucre sanguin (bgr) :</label>
+              <input type="text" id="bgr" name="bgr">
+            </div>
+
+            <div class="form-group">
+              <label for="bu">Taux d'urée sanguine (bu) :</label>
+              <input type="text" id="bu" name="bu">
+            </div>
+
+            <div class="form-group">
+              <label for="sc">Taux de créatinine sérique (sc) :</label>
+              <input type="text" id="sc" name="sc">
+            </div>
+
+            <div class="form-group">
+              <label for="sod">Taux de sodium (sod) :</label>
+              <input type="text" id="sod" name="sod">
+            </div>
+
+            <div class="form-group">
+              <label for="pot">Taux de potassium (pot) :</label>
+              <input type="text" id="pot" name="pot">
+            </div>
+
+            <div class="form-group">
+              <label for="hemo">Taux d'hémoglobine (hemo) :</label>
+              <input type="text" id="hemo" name="hemo">
+            </div>
+
+            <div class="form-group">
+              <label for="pcv">Globules rouges tassés (pcv) :</label>
+              <input type="text" id="pcv" name="pcv">
+            </div>
+
+            <div class="form-group">
+              <label for="wc">Nombre de globules blancs (wc) :</label>
+              <input type="text" id="wc" name="wc">
+            </div>
+
+            <div class="form-group">
+              <label for="rc">Nombre de globules rouges (rc) :</label>
+              <input type="text" id="rc" name="rc">
+            </div>
+
+            <div class="form-group">
+              <label for="htn">Hypertension (htn) :</label>
+              <select id="htn" name="htn">
+                  <option value="neant"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dm">Diabète sucré (dm) :</label>
+              <select id="dm" name="dm">
+                  <option value="neant"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cad">Maladie coronarienne (cad) :</label>
+              <select id="cad" name="cad">
+                  <option value="neant"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="appet">Appétit :</label>
+              <select id="appet" name="appet">
+                  <option value="neant"></option>
+                  <option value="good">Good</option>
+                  <option value="poor">Poor</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pe">Oedèmes aux pieds (pe) :</label>
+              <select id="pe" name="pe">
+                  <option value="neant"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ane">Anémie (ane) :</label>
+              <select id="ane" name="ane">
+                  <option value="neant"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <button type="submit">Soumettre</button>
+            </div>
+          </form>
+        </div> 
+      </div>
+    </section>
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
