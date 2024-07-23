@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Care of Duty - Diabète</title>
+  <title>Care of Duty - Maladies rénales</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -13,7 +13,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -27,31 +27,45 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
-  <title>Tableau à 5 colonnes</title>
   <style>
-      table {
-          width: 100%;
-          border-collapse: collapse;
-      }
-      th, td {
-          border: 1px solid #655b5b;
-          padding: 8px;
-          text-align : left;
-      }
-      th {
-          background-color: #f2f2f2;
-          text-align: center;
-      }
-      tr:nth-child(even) {
-          background-color: #f9f9f9;
-      }
-      tr:hover {
-          background-color: #f1f1f1;
-      }
+    .form-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background: #3FBBC0;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+    }
+    .form-group button:hover {
+      background: #3FBBC0;
+    }
   </style>
-
-
+  
 </head>
 
 <body>
@@ -66,7 +80,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto " href="index.html">Accueil</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
           <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="diabete_page.html">Diabète</a></li>
@@ -76,7 +90,15 @@
               <li><a href="mcf.html">Maladies du foie</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#services">Moteur de prévision</a></li>
+          <li class="dropdown"><a href="index.html"><span>Moteur de prévision</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="prev_diabete.html">Diabète</a></li>
+              <li><a href="prev_cancer_sein.html">Cancer du sein</a></li>
+              <li><a href="prev_cardiac.html">Maladies cardiaques</a></li>
+              <li><a href="prev_rein.html">Maladies rénales</a></li>
+              <li><a href="prev_foie.html">Maladies du foie</a></li>
+            </ul>
+          </li>
           <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -85,149 +107,193 @@
     </div>
   </header><!-- End Header -->
 
-
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
-        <div class="container">
-          <div class="d-flex justify-content-between align-items-center">
-            <h2><B>Moteur de prévision</B></h2>
-          </div>
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><b>Moteur de prévision des maladies rénales</b></h2>
         </div>
-      </section><!-- End Breadcrumbs Section -->
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
     <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-  
-            <div class="section-title">
-                <h2>Description</h2>
-                <p>Le diabète est une maladie chronique qui est caractérisée par une difficulté du corps à réguler lui-même sa glycémie (taux de sucre dans le sang). Cette défaillance peut être causée par le pancréas qui ne sécrète pas suffisamment d'insuline, ou lorsque le corps n'est pas capable d'utiliser efficacement cette hormone. L'hyperglycémie est la conséquence d'un diabète non maîtrisé et celle-ci peut entraîner de graves lésions et complications dans le corps humain. Il existe trois sortes de diabète : diabète de type 1, insulino-dépendant, diabète de type 2, et le diabète gestationnel.</p>
-              </div>
-              
-              <div class="section-title">
-                <h2>Variables</h2>
-                
-                <!-- Add the dropdown menu -->
-                <!-- <label for="feature-select">Sélectionnez une variable:</label> -->
-                <select id="feature-select" onchange="filterTable()">
-                  <option value="all">Toutes les variables</option>
-                  <!-- The options will be dynamically populated by JavaScript -->
-              </select>
-              <br><br>
-  
-              <table id="variables-table">
-                  <thead>
-                    <tr>
-                      <th>Features</th>
-                      <th>Variable (Fr)</th>
-                      <th>Définition</th>
-                      <th>Seuils</th>
-                      <th>Explication</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                        <tr>
-                            <td>Pregnancies</td>
-                            <td>Grossesse</td>
-                            <td>Nombre de grossesse vécue par l'individu</td>
-                            <td>1</td>
-                            <td>Le diabète gestationnel présente un risque pour la mère et pour l'enfant de contracter le diabète par la suite. A chaque grossesse, si la personne fait un diabète gestationnel, le risque d'être diabètique par la suite augmente</td>
-                        </tr>
-                      <tr>
-                            <td>Glucose</td>
-                            <td>Glycémie</td>
-                            <td>Taux de sucre présent dans le sang 2 heures après prise de glucose par voie orale (mg/dl)</td>
-                            <td>taux à ne pas dépasser : 0.92g/L à jeun ; 1.80g/L à 1 heure ; 1.53g/L à 2 heure </td>
-                            <td>
-                                Test à faire lors de la grossesse si certains critères sont remplis<br>
-                                Première prise de sang à jeun pour la glycémie : ne pas dépasser 0.92g/L<br>
-                                Ingestion de 75g de sucre<br>
-                                Deuxième prise de sang 1 heure après l'ingestion du sucre : ne pas dépasser les 1.80g/L<br>
-                                Troisième prise de sang 2 heure après l'ingestion du sucre : ne pas dépasser les 1.53g/L<br>
-                                Si l'un de ces trois taux est franchie, le test de dépistage pour le diabète gestationnel est positif<br>
-                            </td>
-                      </tr>
-                    <tr>
-                      <td>Blood Pressure</td>
-                      <td>Pression artérielle diastolique</td>
-                      <td>Pression artérielle entre deux battements cardiaque</td>
-                      <td>80 mmHg</td>
-                        <td>
-                            Chez le patient diabètique, la pression artérielle diastolique (entre deux battements de coeur) ne dois pas dépasser les 80 mmHg
-                          </td>
-                    </tr>
-                    <tr>
-                      <td>Skin Thickness</td>
-                      <td>Épaisseur du pli cutané du triceps</td>
-                      <td>Mesurer la présence de graisse sous-cutanée</td>
-                      <td>Pas de seuil établie</td>
-                        <td>
-                            Cette indication nous permet d'avoir une indication sur la présence de tissus adipeux sous-cutanée.<br>
-                            La présence de tissus adipeux peux également indiquer un problème de surpoid, facteur de risque pour la présence d'un diabète de type 2 
-                          </td>
-                    </tr>
-                    <tr>
-                      <td>Insulin</td>
-                      <td>Insuline</td>
-                      <td>L'insuline présente dans le sang. Appelée aussi insulinémie, permet le stockage du sucre dans le foie, les muscles, et les tissus adipeux </td>
-                      <td>35 mUI/L à 120 mins (dans le cadre d'une hyperglycémie provoquée par voie orale)</td>
-                        <td>
-                            Valeur normal attendu dans les deux heures suivant une prise de sucre par voie orale.
-                          </td>
-                    </tr>
-                    <tr>
-                      <td>IMC</td>
-                      <td>Indice de Masse Corporelle</td>
-                      <td>Poid en Kg/taille en métre au carré</td>
-                      <td>Entre 23 et 28 suivant la population</td>
-                      <td>La présence de surpoid est un facteur de risque élevé pour la présence d'un diabète de type 2. Suivant la population, l'IMC à ne pas dépasser se situe entre 23 et 28.</td>
-                    </tr>
-                    <tr>
-                      <td>Diabetes Pedigree Function</td>
-                      <td>Indice de prédisposition au diabète</td>
-                      <td>Score calculé pour la prédisposition au diabète selon plusieurs critères.</td>
-                      <td>Plus le score est élevé, plus le risque d'être diabètique est important.</td>
-                      <td>
-                        Une méthode de calcul qui n'est pas clairement définie.<br>
-                        Elle prends en compte divers facteur permettant de refléter le risque génétique de la présence du diabète.<br>
-                        Prise en compte du nombre de parents atteints de diabète.<br>
-                        Le degrès de parenté avec les parents (1er degrés, deuxième degrés)<br>
-                        L'âge de l'apparition du diabète chez ces parents.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Old</td>
-                      <td>Âge</td>
-                      <td>L'âge est un facteur de risque important concernant l'apparition du diabète</td>
-                      <td>40 ans</td>
-                      <td>
-                        Le risque de développer du diabète deviens plus élevé pour les patients de 40 ans est plus<br>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+      <div class="container" data-aos="fade-up">
+        <div class="form-container">
+          <h1>Formulaire de saisie</h1>
+          <form method="post">
+            
+            <div class="form-group">
+              <label for="age">Age :</label>
+              <input type="text" id="age" name="age"><br>
+            </div>
 
-              <div class="section-title">
-                <h2>Bibliographie</h2>
-                <p style = "text-align: left">
-                   OMS, 2023, « Diabète », <a href="https://www.who.int/fr/news-room/fact-sheets/detail/diabetes">lien.</a><br>
-                  Canadian journal of diabete, 2018, « Dépistage du diabète chez les adultes », <a href="https://www.diabetes.ca/DiabetesCanadaWebsite/media/Health-care-providers/2018%20Clinical%20Practice%20Guidelines/2018-CPG%20French/04-Screening-for-Diabetes-FR.pdf">lien.</a><br>
-                  Santé Log, 2020, « DIABÈTE : L’IMC plus prédictif du risque que la génétique », <a href="https://www.santelog.com/actualites/diabete-limc-plus-predictif-du-risque-que-la-genetique#:~:text=L'indice%20de%20masse%20corporelle,ou%20m%C3%AAme%20inverser%20le%20diab%C3%A8te.">lien.</a><br>
-                  LE MANUEL MSD, 2023, « Diabète sucré », <a href="https://www.msdmanuals.com/fr/accueil/troubles-hormonaux-et-m%C3%A9taboliques/diab%C3%A8te-sucr%C3%A9-ds-et-troubles-du-m%C3%A9tabolisme-de-la-glyc%C3%A9mie/diab%C3%A8te-sucr%C3%A9-ds#Traitement_v773058_fr">lien.</a><br>
-                  Cerballiance, 2018, « Test HGPO et diabète gestationnel » <a href="https://www.cerballiance.fr/fr/blog/grossesse/test-hgpo-et-diabete-gestationnel">lien.</a><br>
-                  Diabete Quebec, 2019, « Le contrôle de la tension artérielle »<a href="https://www.diabete.qc.ca/le-diabete/informations-sur-le-diabete/maladies-associees/le-controle-de-la-tension-arterielle/">lien.</a>.<br>
-                    </p>
-  
-        </div>
-      </section>
-
-
-
+            <div class="form-group">
+            <label for="bp">Pression artérielle (bp) :</label>
+            <input type="text" id="bp" name="bp"><br>
+            </div>
     
+            <div class="form-group">
+            <label for="sg">Gravité spécific de l'urine (sg) :</label>
+            <input type="text" id="sg" name="sg"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="al">Taux d'albumine (al) :</label>
+            <input type="text" id="al" name="al"><br>
+            </div>
 
-  </main><!-- End #main -->
+            <div class="form-group">
+            <label for="su">Taux de surcre (su) :</label>
+            <input type="text" id="su" name="su"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="rbc">Globules rouges (rbc) :</label>
+            <select id="rbc" name="rbc">
+                <option value="neant"></option>
+                <option value="normal">Normal</option>
+                <option value="abnormal">Abnormal</option>
+                <option value="inconnu">Inconnu</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="pc">Cellules de pus (pc) :</label>
+            <select id="pc" name="pc">
+                <option value="neant"></option>
+                <option value="normal">Normal</option>
+                <option value="abnormal">Abnormal</option>
+                <option value="inconnu">Inconnu</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="pcc">Agrégats de cellules de pus (pcc) :</label>
+            <select id="pcc" name="pcc">
+                <option value="neant"></option>
+                <option value="present">Present</option>
+                <option value="notpresent">Not present</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="ba">Bactéries (ba) :</label>
+            <select id="ba" name="ba">
+                <option value="neant"></option>
+                <option value="present">Present</option>
+                <option value="notpresent">Not present</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="bgr">Taux de sucre sanguin (bgr) :</label>
+            <input type="text" id="bgr" name="bgr"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="bu">Taux d'urée sanguine (bu) :</label>
+            <input type="text" id="bu" name="bu"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="sc">Taux de créatinine sérique (sc) :</label>
+            <input type="text" id="sc" name="sc"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="sod">Taux de sodium (sod) :</label>
+            <input type="text" id="sod" name="sod"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="pot">Taux de potassium (pot) :</label>
+            <input type="text" id="pot" name="pot"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="hemo">Taux d'hémoglobine (hemo) :</label>
+            <input type="text" id="hemo" name="hemo"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="pcv">Globules rouges tassés (pcv) :</label>
+            <input type="text" id="pcv" name="pcv"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="wc">Nombre de globules blancs (wc) :</label>
+            <input type="text" id="wc" name="wc"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="rc">Nombre de globules rouges (rc) :</label>
+            <input type="text" id="rc" name="rc"><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="htn">Hypertension (htn) :</label>
+            <select id="htn" name="htn">
+                <option value="neant"></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+            </div>
+
+            <div class="form-group">
+            <label for="dm">Diabète sucré (dm) :</label>
+            <select id="dm" name="dm">
+                <option value="neant"></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+            </div>
+
+            <div class="form-group">
+            <label for="cad">Maladie coronarienne (cad) :</label>
+            <select id="cad" name="cad">
+                <option value="neant"></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="appet">Appétit :</label>
+            <select id="appet" name="appet">
+                <option value="neant"></option>
+                <option value="good">Good</option>
+                <option value="poor">Poor</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="pe">Oedèmes aux pieds (pe) :</label>
+            <select id="pe" name="pe">
+                <option value="neant"></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+            </div>
+    
+            <div class="form-group">
+            <label for="ane">Anémie (ane) :</label>
+            <select id="ane" name="ane">
+                <option value="neant"></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+            </div>
+
+            <div class="form-group">
+            <input type="submit" value="Soumettre">
+            </div>
+        </form>
+      </div> 
+    </div>
+  </section>
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -276,10 +342,6 @@
         &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -299,47 +361,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-
-  <!-- Menu déroulant JS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Populate the dropdown menu with unique features
-      const select = document.getElementById('feature-select');
-      const table = document.getElementById('variables-table');
-      const rows = table.querySelectorAll('tbody tr');
-      const features = new Set();
-
-      rows.forEach(row => {
-        const feature = row.cells[0].textContent.trim();
-        features.add(feature);
-      });
-
-      features.forEach(feature => {
-        const option = document.createElement('option');
-        option.value = feature;
-        option.textContent = feature;
-        select.appendChild(option);
-      });
-    });
-
-    function filterTable() {
-      const select = document.getElementById('feature-select');
-      const selectedFeature = select.value;
-      const table = document.getElementById('variables-table');
-      const rows = table.querySelectorAll('tbody tr');
-
-      rows.forEach(row => {
-        const feature = row.cells[0].textContent.trim();
-        if (selectedFeature === 'all' || feature === selectedFeature) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    }
-  </script>
-
-
 </body>
 
 </html>
+
