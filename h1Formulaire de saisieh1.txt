@@ -1,0 +1,26 @@
+<h1>Formulaire de saisie</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="age">AGE:</label>
+        <input type="text" id="age" name="age"><br>
+        
+        <label for="Pregnancies">PREGNANCIES:</label>
+        <input type="text" id="Pregnancies" name="Pregnancies"><br>
+
+        <label for="Glucose">GLUCOSE:</label>
+        <input type="text" id="Glucose" name="Glucose"><br>
+
+        <label for="BloodPressure">BLOODPRESSURE:</label>
+        <input type="text" id="BloodPressure" name="BloodPressure"><br>
+
+        <label for="Insulin">INSULIN:</label>
+        <input type="text" id="Insulin" name="Insulin"><br>
+
+        <label for="BMI">BMI:</label>
+        <input type="text" id="BMI" name="BMI"><br>
+
+        <label for="DiabetesPedigreeFunction">		DIABETEPREDIGREEFUNCTION:</label>
+        <input type="text" id="DiabetesPedigreeFunction" 	name="DiabetesPedigreeFunction"><br>
+
+        <input type="submit" value="Soumettre">
+    </form>
