@@ -14,6 +14,10 @@ body {
   color: #444444;
 }
 
+.carousel-item {
+  background-color: #85DDE8;
+}
+
 a {
   color: #3fbbc0;
   text-decoration: none;
@@ -101,6 +105,12 @@ h6 {
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
+}
+
+.carousel-img-bg {
+  position: absolute;
+  z-index: -1;
+  height: 40em;
 }
 
 /*--------------------------------------------------------------
@@ -1165,9 +1175,9 @@ section {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: -40px 0 0 40px;
+  width: 300px;
+  border-radius: 10%;
+  margin:  20px;
   position: relative;
   z-index: 2;
   border: 6px solid #fff;

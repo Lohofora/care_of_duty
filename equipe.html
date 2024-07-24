@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,215 +25,235 @@
 
     <style>
         .section-title h2 {
-            font-size: 2.5em; /* Ajustez cette valeur pour la taille souhaitée */
-            font-weight: bold; /* Rend le texte plus épais */
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 100px; /* Ajouter de la marge supérieure */
+            padding-top: 30px;
         }
 
         .section-title p {
-            font-size: 1.8em; /* Ajustez cette valeur pour la taille souhaitée */
-            font-weight: bold; /* Rend le texte plus épais */
+            font-size: 1.8em;
+            font-weight: bold;
         }
 
-        .carousel-item img {
-    width: 450px; /* Ajustez cette valeur pour la largeur souhaitée */
-    height: 400px; /* Ajustez cette valeur pour la hauteur souhaitée */
-    object-fit: cover; /* Assure que l'image couvre entièrement le cadre sans déformation */
-    border-radius: 10px; /* Ajoute des coins arrondis */
-    display: block;
-    margin: 0 auto; /* Centre l'image horizontalement */
-}
-
-.details-container img, .team-member img {
-    width: 150px; /* Ajustez cette valeur pour la largeur souhaitée des autres images */
-    height: 250px; /* Ajustez cette valeur pour la hauteur souhaitée des autres images */
-    object-fit: cover; /* Assure que l'image couvre entièrement le cadre sans déformation */
-    border-radius: 10px; /* Ajoute des coins arrondis */
-}
-
-
-        .details-container {
-            display: none;
-            flex-direction: row;
-            align-items: center;
-            margin-top: 50px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+        .swiper-slide img {
+            width: 94%;
+            height: 300px;
+            border-radius: 20px;
         }
 
-        .details-container img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-right: 20px;
+        .swiper-container {
+            width: 100%;
+            padding: 30px 0;
         }
 
-        .details-container .description {
-            color: black;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
+        .member-info {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #000;
+        }
+
+        .social a {
+            margin: 0 10px;
         }
     </style>
 </head>
+
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+            <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto " href="index.html">Accueil</a></li>
-          <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="diabete_page.html">Diabète</a></li>
-              <li><a href="cancer_page.html">Cancer du sein</a></li>
-              <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
-              <li><a href="mrc.html">Maladies rénales</a></li>
-              <li><a href="mcf.html">Maladies du foie</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#services">Moteur de prévision</a></li>
-          <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Notre Équipe</h2>
-          <p>Rencontrez les membres de notre équipe</p>
-          <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" onclick="showDetails('Member 1', 'Ceci est la description du membre 1 de l\'équipe Care of Duty.', 'assets/img/hassene_2.jpg')">
-                <img src="assets/img/hassene_2.jpg" class="d-block" alt="Member 1">
-              </div>
-              <div class="carousel-item" onclick="showDetails('Member 2', 'Ceci est la description du membre 2 de l\'équipe Care of Duty.', 'assets/img/Marion.jpg')">
-                <img src="assets/img/Marion.jpg" class="d-block" alt="Member 2">
-              </div>
-              <div class="carousel-item" onclick="showDetails('Member 3', 'Ceci est la description du membre 3 de l\'équipe Care of Duty.', 'assets/img/maxim.jpg')">
-                <img src="assets/img/maxim.jpg" class="d-block" alt="Member 3">
-              </div>
-              <div class="carousel-item" onclick="showDetails('Member 4', 'Ceci est la description du membre 4 de l\'équipe Care of Duty.', 'assets/img/viktoriya.jpg')">
-                <img src="assets/img/viktoriya.jpg" class="d-block" alt="Member 4">
-              </div>
-              <div class="carousel-item" onclick="showDetails('Member 5', 'Ceci est la description du membre 5 de l\'équipe Care of Duty.', 'assets/img/Souf.jpg')">
-                <img src="assets/img/Souf.jpg" class="d-block" alt="Member 5">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          
-        
-
-        <div class="details-container" id="details-container" style="display: none;">
-          <img id="details-image" src="" alt="Member Image">
-          <div class="description" id="details-description"></div>
-        </div>
-        
-
-      </div>
-    </section><!-- End Team Section -->
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Care of Duty</h3>
-              <p>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Navigation</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Équipe</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Nos services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
-            </ul>
-          </div>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                  <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
+                  <li class="nav-link scrollto"><a href="index.html#services"><span>Moteur de prédiction</span></a></li>
+                  <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="diabete_page.html">Diabète</a></li>
+                      <li><a href="cancer_page.html">Cancer du sein</a></li>
+                      <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
+                      <li><a href="mrc.html">Maladies rénales</a></li>
+                      <li><a href="mcf.html">Maladies du foie</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav><!-- .navbar -->
 
         </div>
-      </div>
-    </div>
+    </header><!-- End Header -->
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+    <main id="main"style="padding-top: 80px;>
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+                <div class="section-title">
+                    <h2>Notre Équipe</h2>
+                    <p>Rencontrez les membres de notre équipe</p>
+                </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="assets/img/hassene_2.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/hassene-tilioua-dataanalyst2024/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Hassene</h4>
+                                    <span>Data Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="member" data-aos="fade-up" data-aos-delay="200">
+                                <div class="member-img">
+                                    <img src="assets/img/Marion.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/marion-studer-0569b8173/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Marion</h4>
+                                    <span>Data Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="member" data-aos="fade-up" data-aos-delay="300">
+                                <div class="member-img">
+                                    <img src="assets/img/maxim.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/maxime-barski/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Maxim</h4>
+                                    <span>Data Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="member" data-aos="fade-up" data-aos-delay="400">
+                                <div class="member-img">
+                                    <img src="assets/img/viktoriya.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/viktoryia-meurville-b94565308/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Viktoriya</h4>
+                                    <span>Data Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="member" data-aos="fade-up" data-aos-delay="500">
+                                <div class="member-img">
+                                    <img src="assets/img/Alan_1.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/alan-fauvergue-874010123/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Alan</h4>
+                                    <span>Data Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+            </div>
+        </section><!-- End Team Section -->
 
-  <script>
-    function showDetails(name, description, image) {
-        var detailsContainer = document.getElementById('details-container');
-        var detailsImage = document.getElementById('details-image');
-        var detailsDescription = document.getElementById('details-description');
-    
-        detailsImage.src = image;  // Met à jour la source de l'image
-        detailsDescription.innerHTML = "<h3>" + name + "</h3><p>" + description + "</p>";
-        detailsContainer.style.display = 'flex';
-    }
-    </script>
-    
+    </main><!-- End #main -->
 
-</body>
-</html>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+          <div class="container">
+              <div class="copyright">
+                  &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
+              </div>
+              <div class="credits">
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+          </div>
+      </footer><!-- End Footer -->
+  
+      <div id="preloader"></div>
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+  
+      <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
+  
+      <script>
+          var swiper = new Swiper('.swiper-container', {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              centeredSlides: true,
+              pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+              },
+              navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+              },
+              breakpoints: {
+                  640: {
+                      slidesPerView: 1,
+                      spaceBetween: 20,
+                  },
+                  768: {
+                      slidesPerView: 2,
+                      spaceBetween: 30,
+                  },
+                  1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 40,
+                  },
+              }
+          });
+  
+          function showDetails(name, description, image) {
+              var detailsContainer = document.getElementById('details-container');
+              var detailsImage = document.getElementById('details-image');
+              var detailsDescription = document.getElementById('details-description');
+  
+              detailsImage.src = image;  // Met à jour la source de l'image
+              detailsDescription.innerHTML = "<h3>" + name + "</h3><p>" + description + "</p>";
+              detailsContainer.style.display = 'flex';
+          }
+      </script>
+  
+  </body>
+  
+  </html>
+  

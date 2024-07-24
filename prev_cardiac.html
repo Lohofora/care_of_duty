@@ -36,16 +36,16 @@
       border-radius: 10px;
       background: #f9f9f9;
     }
-    .form-container h1 {
+    .form-container h3 {
       text-align: center;
       margin-bottom: 20px;
     }
     .form-group {
       margin-bottom: 15px;
     }
-    .form-group label {
+    /* .form-group label {
       font-weight: bold;
-    }
+    } */
     .form-group input, .form-group select {
       width: 100%;
       padding: 10px;
@@ -55,14 +55,14 @@
     .form-group button {
       width: 100%;
       padding: 10px;
-      background: #5cb85c;
+      background: #3FBBC0;
       border: none;
       border-radius: 5px;
       color: white;
       font-size: 16px;
     }
     .form-group button:hover {
-      background: #4cae4c;
+      background: #7bc9cc;
     }
   </style>
   
@@ -70,34 +70,34 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+    <a href="index.html" class="logo me-auto"><img src="assets/img/final_hippo_with_text.png" alt=""></a>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
-          <li class="dropdown"><a href="#"><span>Maladies</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="diabete_page.html">Diabète</a></li>
-              <li><a href="cancer_page.html">Cancer du sein</a></li>
-              <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
-              <li><a href="mrc.html">Maladies rénales</a></li>
-              <li><a href="mcf.html">Maladies du foie</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#services">Moteur de prévision</a></li>
-          <li><a class="nav-link scrollto" href="equipe.html">Équipe</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
+        <li class="nav-link scrollto"><a href="index.html#services"><span>Moteur de prédiction</span></a></li>
+        <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="diabete_page.html">Diabète</a></li>
+            <li><a href="cancer_page.html">Cancer du sein</a></li>
+            <li><a href="cardiac_page.html">Maladies cardiaques</a></li>
+            <li><a href="mrc.html">Maladies rénales</a></li>
+            <li><a href="mcf.html">Maladies du foie</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link scrollto" href="index.html#testimonials">Équipe</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
 
-    </div>
-  </header><!-- End Header -->
+  </div>
+</header><!-- End Header -->
 
   <main id="main">
 
@@ -105,7 +105,7 @@
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2><b>Moteur de prévision des maladies cardiaques</b></h2>
+          <h2><b>Moteur de prédiction des maladies cardiaques</b></h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
@@ -113,94 +113,114 @@
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
         <div class="form-container">
-          <h1>Formulaire de saisie</h1>
+          <h3>Vos informations :</h3><br>
           <form method="post">
             
             <div class="form-group">
-              <label for="age">Age:</label>
+              <label for="age">Âge :</label>
               <input type="text" id="age" name="age" required>
-            </div>
-            <div class="form-group">
-              <label for="sex">Sex:</label>
-              <select id="sex" name="sex" required>
-                <option value="1">Male</option>
-                <option value="0">Female</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="sex">Sexe :</label>
+              <select id="sex" name="sexe" required>
+                  <option></option>
+                  <option value="1">Homme</option>
+                  <option value="0">Femme</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="cp">CP (Chest Pain Type):</label>
-              <select id="cp" name="cp" required>
-                <option value="0">Typical angina</option>
-                <option value="1">Atypical angina</option>
-                <option value="2">Non-anginal pain</option>
-                <option value="3">Asymptomatic</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="cp">CP (Type de douleur thoracique) :</label>
+              <select id="cp" name="type_douleur_thoracique" required>
+                  <option></option>
+                  <option value="0">Angine typique</option>
+                  <option value="1">Angine atypique</option>
+                  <option value="2">Douleur non angineuse</option>
+                  <option value="3">Asymptomatique</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="trestbps">Trestbps (Resting Blood Pressure):</label>
-              <input type="text" id="trestbps" name="trestbps" required>
-            </div>
-            <div class="form-group">
-              <label for="chol">Chol (Serum Cholestoral in mg/dl):</label>
-              <input type="text" id="chol" name="chol" required>
-            </div>
-            <div class="form-group">
-              <label for="fbs">FBS (Fasting Blood Sugar > 120 mg/dl):</label>
-              <select id="fbs" name="fbs" required>
-                <option value="1">True</option>
-                <option value="0">False</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="trestbps">Pression artérielle au repos :</label>
+              <input type="text" id="trestbps" name="pression_arterielle_repos" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="chol">Cholestérol sérique (mg/dl) :</label>
+              <input type="text" id="chol" name="cholesterol_serique" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="fbs">Glycémie à jeun > 120 mg/dl :</label>
+              <select id="fbs" name="glycemie_jeun" required>
+                  <option></option>
+                  <option value="1">Vrai</option>
+                  <option value="0">Faux</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="restecg">Restecg (Resting Electrocardiographic Results):</label>
-              <select id="restecg" name="restecg" required>
-                <option value="0">Normal</option>
-                <option value="1">Having ST-T wave abnormality</option>
-                <option value="2">Showing probable or definite left ventricular hypertrophy</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="restecg">ECG au repos (résultats électrocardiographiques au repos) :</label>
+              <select id="restecg" name="ecg_repos" required>
+                  <option></option>
+                  <option value="0">Normal</option>
+                  <option value="1">Anomalie de l'onde ST-T</option>
+                  <option value="2">Hypertrophie ventriculaire gauche probable ou définitive</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="thalach">Thalach (Maximum Heart Rate Achieved):</label>
-              <input type="text" id="thalach" name="thalach" required>
-            </div>
-            <div class="form-group">
-              <label for="exang">Exang (Exercise Induced Angina):</label>
-              <select id="exang" name="exang" required>
-                <option value="1">Yes</option>
-                <option value="0">No</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="thalach">Thalach (Fréquence cardiaque maximale atteinte) :</label>
+              <input type="text" id="thalach" name="frequence_cardiaque_maximale" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="exang">Angine induite par l'exercice :</label>
+              <select id="exang" name="angine_exercice" required>
+                  <option></option>
+                  <option value="1">Oui</option>
+                  <option value="0">Non</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="oldpeak">Oldpeak (ST Depression Induced by Exercise):</label>
-              <input type="text" id="oldpeak" name="oldpeak" required>
-            </div>
-            <div class="form-group">
-              <label for="slope">Slope (Slope of the Peak Exercise ST Segment):</label>
-              <select id="slope" name="slope" required>
-                <option value="0">Upsloping</option>
-                <option value="1">Flat</option>
-                <option value="2">Downsloping</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="oldpeak">Oldpeak (dépression ST induite par l'exercice) :</label>
+              <input type="text" id="oldpeak" name="depression_st_exercice" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="slope">Pente (Pente du segment ST à l'effort) :</label>
+              <select id="slope" name="pente_segment_st" required>
+                  <option></option>
+                  <option value="0">Montante</option>
+                  <option value="1">Plate</option>
+                  <option value="2">Descendante</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="ca">CA (Number of Major Vessels Colored by Fluoroscopy):</label>
-              <select id="ca" name="ca" required>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+          </div>
+          
+          <div class="form-group">
+              <label for="ca">CA (Nombre de vaisseaux majeurs colorés par fluoroscopie) :</label>
+              <select id="ca" name="vaisseaux_maj_colores" required>
+                  <option></option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="thal">Thal:</label>
+          </div>
+          
+          <div class="form-group">
+              <label for="thal">Thal :</label>
               <select id="thal" name="thal" required>
-                <option value="1">Normal</option>
-                <option value="2">Fixed defect</option>
-                <option value="3">Reversible defect</option>
+                  <option></option>
+                  <option value="1">Normal</option>
+                  <option value="2">Défaut fixe</option>
+                  <option value="3">Défaut réversible</option>
               </select>
-            </div>
+          </div>
             <div class="form-group">
               <button type="submit">Soumettre</button>
             </div>
@@ -212,46 +232,6 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Care of Duty</h3>
-              <p>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Navigation</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Accueil</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Équipe</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Nos services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Moteur de prévision</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Care of Duty</span></strong>. All Rights Reserved
