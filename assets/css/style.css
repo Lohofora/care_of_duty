@@ -1243,6 +1243,46 @@ section {
   background-color: #3fbbc0;
 }
 
+.testimonials .testimonial-item  .social  {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials .testimonial-item .social a  {
+  transition: color 0.3s;
+  color: #555555;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials .testimonial-item  .social a {
+  transition: color 0.3s;
+  color: #555555;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials .testimonial-item  .social a i {
+  line-height: 0;
+}
+.testimonials .testimonial-item  .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+.testimonials .testimonial-item  .social {
+  opacity: 1;
+}
+
 /*--------------------------------------------------------------
 # Doctors
 --------------------------------------------------------------*/
@@ -1260,7 +1300,7 @@ section {
   overflow: hidden;
 }
 
-.doctors .member .social {
+/* .doctors .member .social {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1272,7 +1312,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
+
+
 
 .doctors .member .social a {
   transition: color 0.3s;
